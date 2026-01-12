@@ -73,7 +73,7 @@ RUN apk update && \
     rm -rf /var/cache/apk/*
 
 COPY --from=backend /app/build/server /app/
-COPY ./conf /app/conf
+COPY *.yaml /app/
 
 ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
